@@ -1,5 +1,4 @@
+logs/*
+config.env
 node_modules/
-config.env/
-index.html/
-note.txt/
-package-lock.json/
+package-lock.json
