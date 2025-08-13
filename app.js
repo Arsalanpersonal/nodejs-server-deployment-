@@ -15,6 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // custome middlewares...
+app.get("/", (req, res) => {
+  res.send("Welcome to Foodly API");
+});
 app.use("/api/category", Category);
 app.use("/api/restaurant", Restaurant);
 app.use("/api/food", Food);
