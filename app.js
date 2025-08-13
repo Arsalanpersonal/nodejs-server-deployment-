@@ -5,6 +5,10 @@ env.config({ path: "config.env" });
 const DB = require("../Backend/db");
 const port = process.env.PORT || 4000;
 
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Foodly API");
+});
 // Import custome routers...
 const Category = require("../Backend/routes/categoryRoute");
 const Restaurant = require("../Backend/routes/restaurantRoute");
@@ -15,9 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // custome middlewares...
-app.get("/", (req, res) => {
-  res.send("Welcome to Foodly API");
-});
+
 app.use("/api/category", Category);
 app.use("/api/restaurant", Restaurant);
 app.use("/api/food", Food);
